@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/PropertyBrowser">
+        <file>Images/add.png</file>
+        <file>Images/save.png</file>
+        <file>Images/_remove.png</file>
+        <file>Images/Document-Delete-icon.png</file>
+        <file>Images/Open.png</file>
+        <file>Images/_Cancel.png</file>
+        <file>Images/Apply.png</file>
+    </qresource>
+</RCC>

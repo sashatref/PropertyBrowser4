@@ -1,0 +1,8 @@
+/Builds*
+/Build-*
+/translations
+*.user
+/example/PropertyEditor3.pro.user.f9997ab
+*pro.user
+/include
+/bin

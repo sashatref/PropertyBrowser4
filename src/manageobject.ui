@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ManageObject</class>
+ <widget class="QWidget" name="ManageObject">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>659</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="PropertyBrowser3" name="propertyBrowser">
+     <property name="multiObjectListVisible">
+      <bool>false</bool>
+     </property>
+     <property name="labelVisible">
+      <bool>true</bool>
+     </property>
+     <property name="labelFont">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QToolButton" name="removeButton">
+       <property name="toolTip">
+        <string>Удалить</string>
+       </property>
+       <property name="statusTip">
+        <string>Удалить</string>
+       </property>
+       <property name="whatsThis">
+        <string>Удалить</string>
+       </property>
+       <property name="text">
+        <string>Удалить</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>36</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QToolButton" name="applyButton">
+       <property name="toolTip">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="statusTip">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="whatsThis">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="text">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>36</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="closeButton">
+       <property name="toolTip">
+        <string>Закрыть</string>
+       </property>
+       <property name="statusTip">
+        <string>Закрыть</string>
+       </property>
+       <property name="whatsThis">
+        <string>Закрыть</string>
+       </property>
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>36</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PropertyBrowser3</class>
+   <extends>QWidget</extends>
+   <header>propertybrowser3/propertybrowser3.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

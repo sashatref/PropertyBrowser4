@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoadFilesWidget</class>
+ <widget class="QDialog" name="LoadFilesWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>411</width>
+    <height>421</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Список файлов</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QToolButton" name="openButton">
+         <property name="toolTip">
+          <string>Открыть список файлов...</string>
+         </property>
+         <property name="statusTip">
+          <string>Открыть список файлов...</string>
+         </property>
+         <property name="whatsThis">
+          <string>Открыть список файлов...</string>
+         </property>
+         <property name="text">
+          <string>Открыть список файлов...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/PropertyBrowser/Images/Open.png</normaloff>:/PropertyBrowser/Images/Open.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="addButton">
+         <property name="toolTip">
+          <string>Добавить список файлов...</string>
+         </property>
+         <property name="statusTip">
+          <string>Добавить список файлов...</string>
+         </property>
+         <property name="whatsThis">
+          <string>Добавить список файлов...</string>
+         </property>
+         <property name="text">
+          <string>Добавить список файлов...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/PropertyBrowser/Images/add.png</normaloff>:/PropertyBrowser/Images/add.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="removeAllButton">
+         <property name="toolTip">
+          <string>Удалить все файлы</string>
+         </property>
+         <property name="statusTip">
+          <string>Удалить все файлы</string>
+         </property>
+         <property name="whatsThis">
+          <string>Удалить все файлы</string>
+         </property>
+         <property name="text">
+          <string>Удалить все файлы</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/PropertyBrowser/Images/Document-Delete-icon.png</normaloff>:/PropertyBrowser/Images/Document-Delete-icon.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QToolButton" name="cancelButton">
+       <property name="toolTip">
+        <string>Закрыть</string>
+       </property>
+       <property name="statusTip">
+        <string>Закрыть</string>
+       </property>
+       <property name="whatsThis">
+        <string>Закрыть</string>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/PropertyBrowser/Images/_Cancel.png</normaloff>:/PropertyBrowser/Images/_Cancel.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="applyButton">
+       <property name="toolTip">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="statusTip">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="whatsThis">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Применить и закрыть</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/PropertyBrowser/Images/Apply.png</normaloff>:/PropertyBrowser/Images/Apply.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+  <action name="actionRemoveDuplicates">
+   <property name="text">
+    <string>Удалить дубликаты</string>
+   </property>
+   <property name="toolTip">
+    <string>Удалить дубликаты</string>
+   </property>
+  </action>
+  <action name="actionRemoveItem">
+   <property name="text">
+    <string>Удалить строку</string>
+   </property>
+   <property name="toolTip">
+    <string>Удалить строку</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../../Propertybrowser3_images.qrc"/>
+  <include location="../../../../HelperLibrary/Sources/helper_images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
