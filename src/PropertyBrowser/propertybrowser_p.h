@@ -2,7 +2,7 @@
 
 #include "project_pch.h"
 
-#include "ipropertyinfomap.h"
+#include <PropertyBrowserCore/ipropertyinfomap.h>
 
 class IGadget;
 class QUndoStack;

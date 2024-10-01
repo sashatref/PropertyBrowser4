@@ -1,13 +1,13 @@
 #include "propertybrowser.h"
 #include "ui_propertybrowser.h"
 
-#include "interfacetool.h"
+#include <PropertyBrowserCore/interfacetool.h>
+
 #include "priv/itemdelegate.h"
 #include "propertybrowser_p.h"
+#include <PropertyBrowserCore/EditorFactory.h>
 #include <PropertyBrowserEditors/DefaultPropertyItem/defaultpropertyitem.h>
 #include <PropertyBrowserEditors/PropertyBrowserEditors.h>
-
-ObjectFactory<AbstractPropertyItem, int> PropertyBrowser::m_factory;
 
 PropertyBrowser::PropertyBrowser(QWidget *parent)
     : QWidget(parent)
@@ -176,7 +176,7 @@ void PropertyBrowser::clearUndoList()
 void PropertyBrowser::registerTypeEditor(int _type,
                                          std::function<AbstractPropertyItem *()> _createFunc)
 {
-    m_factory.add(_type, _createFunc);
+    EditorFactory::m_factory.add(_type, _createFunc);
 }
 
 void PropertyBrowser::registerEnumEditor(int _type)
@@ -496,66 +496,7 @@ void PropertyBrowser::registerBaseTypes()
 {
     using namespace PropertyBrowser3Qt;
 
-    AssignEditors(m_factory);
-}
-
-AbstractPropertyItem *PropertyBrowser::addItem(const QString &_propertyName,
-                                               int _propertyType,
-                                               QTreeWidgetItem *_treeItem,
-                                               const PropertyInfo &_propInfo,
-                                               const QMetaProperty &_metaProperty)
-{
-    using namespace PropertyBrowser3Qt;
-
-    if(!_treeItem) return 0;
-    QTreeWidgetItem *groupTreeItem = TreeWidgetUtils::findByName(_treeItem, _propInfo.m_group, 0);
-
-    if(!groupTreeItem)
-    {
-        if(_propInfo.m_group == "")
-        {
-            groupTreeItem = _treeItem;
-        } else
-        {
-            groupTreeItem = new QTreeWidgetItem(_treeItem);
-            groupTreeItem->setText(0, _propInfo.m_group);
-
-            InterfaceTool::applyItemAsGroup(groupTreeItem);
-        }
-    }
-
-    QTreeWidgetItem *item = new QTreeWidgetItem(groupTreeItem);
-    item->setHidden(_propInfo.m_isHidden);
-    item->setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-    groupTreeItem->setExpanded(true);
-
-    InterfaceTool::applyItemAsValue(item);
-
-    AbstractPropertyItem *propertyItem = 0;
-
-    if(m_factory.isRegistered(_propertyType))
-    {
-        propertyItem = m_factory.create(_propertyType);
-    } else
-    {
-        propertyItem = new DefaultPropertyItem();
-    }
-
-    if(propertyItem)
-    {
-        propertyItem->initProperty(_propertyName, _propInfo, item, _metaProperty);
-    }
-
-    if(propertyItem->isPermanent())
-    {
-        QWidget *wdg = propertyItem->createEditor(_treeItem->treeWidget());
-        //propertyItem->onSetReadOnly(wdg, d->m_isReadOnly);
-        _treeItem->treeWidget()->setItemWidget(item, 1, wdg);
-    }
-
-    item->setData(1, Qt::UserRole, QVariant::fromValue(propertyItem));
-
-    return propertyItem;
+    AssignEditors(EditorFactory::m_factory);
 }
 
 QVariant PropertyBrowser::saveWidgetState() const

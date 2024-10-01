@@ -2,21 +2,8 @@
 
 #include "propertyinfo.h"
 
-AbstractPropertyItem::AbstractPropertyItem(int _propertyType):
-    m_treeItem          (0),
-    m_propertiesMap     (),
-    m_isExpandable      (false),
-    m_propertyName      (),
-    m_propertyCaption   (),
-    m_group             (),
-    m_description       (),
-    m_isVisible         (true),
-    m_isWarning         (false),
-    m_isRequried        (false),
-    m_isReadOnly        (false),
-    m_propertyType      (_propertyType),
-    m_value             (),
-    m_oldValue          ()
+AbstractPropertyItem::AbstractPropertyItem(int _propertyType)
+    : m_propertyType(_propertyType)
 {
 
 }

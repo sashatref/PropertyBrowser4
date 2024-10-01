@@ -53,7 +53,6 @@ class PROPERTYBROWSER3_EXPORT PropertyBrowser : public QWidget, public ISaveWidg
     Q_PROPERTY(bool readOnly READ getReadOnly WRITE setReadOnly)
     Q_PROPERTY(int configLineVisibility READ getConfigLineVisibility WRITE setConfigLineVisibility)
 public:
-    static ObjectFactory<AbstractPropertyItem, int> m_factory;
 
     static void registerType();
 
@@ -254,18 +253,6 @@ public:
     {
         registerEnumEditor(qMetaTypeId<Type>());
     }
-
-    //static void registerVariantListEditor(int _type)
-
-    /*!
-     * \brief добавляет новый QTreeWidgetItem в дерево и ассоциирует его с AbstractPropertyItem
-     * остальные настройки берутся из PropertyInfo
-     */
-    static AbstractPropertyItem *addItem(const QString &_propertyName,
-                                         int _propertyType,
-                                         QTreeWidgetItem *_treeItem,
-                                         const PropertyInfo &_propInfo,
-                                         const QMetaProperty &_metaProperty);
 
     // ISaveWidget interface
 public:

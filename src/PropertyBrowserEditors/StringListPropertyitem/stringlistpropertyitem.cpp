@@ -1,8 +1,8 @@
 #include "stringlistpropertyitem.h"
 
-#include "stringlisteditor.h"
-#include "../editorproperties.h"
 #include "loadfileswidget.h"
+#include "stringlisteditor.h"
+#include <PropertyBrowserCore/editorproperties.h>
 
 StringListPropertyItem::StringListPropertyItem() :
     AbstractPropertyItem(QVariant::StringList)

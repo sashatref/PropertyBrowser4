@@ -8,6 +8,15 @@ set(SOURCES
     abstractpropertyitem.cpp
     propertyinfo.h
     editorproperties.h
+    EditorFactory.h
+    EditorFactory.cpp
+    interfacetool.h
+    interfacetool.cpp
+    ipropertyinfomap.h
+    Decorator/decoratorfactory.cpp
+    Decorator/decoratorfactory.h
+    Decorator/idecoratorbase.cpp
+    Decorator/idecoratorbase.h
 )
 
 
@@ -16,6 +25,7 @@ add_library(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
     Qt5::Widgets
+    HelperLibrary
 )
 
 target_include_directories(${PROJECT_NAME}

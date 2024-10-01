@@ -2,13 +2,14 @@
 
 #include <PropertyBrowserCore/abstractpropertyitem.h>
 
-#include "interfacetool.h"
-#include "ipropertyinfomap.h"
 #include "priv/changepropertycommand.h"
 #include "priv/configuredialog.h"
 #include "priv/itemdelegate.h"
 #include "propertybrowser.h"
 #include "ui_propertybrowser.h"
+#include <PropertyBrowserCore/EditorFactory.h>
+#include <PropertyBrowserCore/interfacetool.h>
+#include <PropertyBrowserCore/ipropertyinfomap.h>
 
 PropertyBrowser_P::PropertyBrowser_P(PropertyBrowser *const _q)
     : q(_q)
@@ -152,11 +153,11 @@ void PropertyBrowser_P::createProperties(const QVariantList &_valueList)
         int index = mo->indexOfProperty(it.toUtf8());
         int objectType = mo->property(index).userType();
 
-        AbstractPropertyItem *addedItem = q->addItem(it,
-                                                    objectType,
-                                                    m_topLevelItem,
-                                                    m_propertyInfoMap[it],
-                                                    mo->property(index));
+        AbstractPropertyItem *addedItem = EditorFactory::addItem(it,
+                                                                 objectType,
+                                                                 m_topLevelItem,
+                                                                 m_propertyInfoMap[it],
+                                                                 mo->property(index));
         m_propertyItemMap[it] = addedItem;
         connect(addedItem,
                 &AbstractPropertyItem::valueChanged,

@@ -1,6 +1,7 @@
 #include "sizepropertyitem.h"
-#include "../../propertybrowser.h"
-#include "../editorproperties.h"
+
+#include <PropertyBrowserCore/EditorFactory.h>
+#include <PropertyBrowserCore/editorproperties.h>
 
 SizePropertyItem::SizePropertyItem()
 {
@@ -54,11 +55,11 @@ void SizePropertyItem::updateTextValue()
         {
             const QString key = items.at(i);
 
-            AbstractPropertyItem *addedItem = PropertyBrowser::addItem(key,
-                                                                       QVariant::Int,
-                                                                       m_treeItem,
-                                                                       map[key],
-                                                                       QMetaProperty());
+            AbstractPropertyItem *addedItem = EditorFactory::addItem(key,
+                                                                     QVariant::Int,
+                                                                     m_treeItem,
+                                                                     map[key],
+                                                                     QMetaProperty());
             connect(addedItem, &AbstractPropertyItem::valueChanged, this, &SizePropertyItem::onPropertyChanged);
 
             addedItem->updateTextValue();

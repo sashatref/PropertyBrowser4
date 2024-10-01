@@ -1,8 +1,9 @@
 #include "flagsinteditor.h"
 
-#include "../../propertybrowser.h"
-#include "../abstractpropertyitem.h"
-#include "../editorproperties.h"
+#include <PropertyBrowserCore/EditorFactory.h>
+#include <PropertyBrowserCore/abstractpropertyitem.h>
+#include <PropertyBrowserCore/editorproperties.h>
+
 #include "intpropertyitem.h"
 
 FlagsIntEditor::FlagsIntEditor(IntPropertyItem *_parent):
@@ -40,11 +41,11 @@ bool FlagsIntEditor::updateTextValue()
         int bitMask = enumerator.value(i);
         QString name = enumerator.key(i);
 
-        AbstractPropertyItem *addedItem = PropertyBrowser::addItem(name,
-                                                                   QVariant::Bool,
-                                                                   m_baseIntEditor->m_treeItem,
-                                                                   PropertyInfo(),
-                                                                   QMetaProperty());
+        AbstractPropertyItem *addedItem = EditorFactory::addItem(name,
+                                                                 QVariant::Bool,
+                                                                 m_baseIntEditor->m_treeItem,
+                                                                 PropertyInfo(),
+                                                                 QMetaProperty());
 
         QVariantMap map = m_baseIntEditor->m_propertiesMap[FlagsProperty::FriendlyNamesMap].toMap();
         if(map.contains(name))

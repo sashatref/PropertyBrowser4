@@ -10,6 +10,9 @@
 #include <QDoubleSpinBox>
 #include <QFileDialog>
 #include <QFontDialog>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QKeyEvent>
 #include <QLineEdit>
 #include <QMenu>
@@ -20,7 +23,12 @@
 #include <QScrollBar>
 #include <QTextEdit>
 #include <QTreeWidgetItem>
+#include <QVBoxLayout>
 
 #include <HelperLibrary/Resources/resourceexplorerdialog.h>
+#include <HelperLibrary/Styles/iconsenum.h>
+#include <HelperLibrary/Widgets/VariantMapEditor/VariantMapEditor.h>
+#include <HelperLibrary/Widgets/dialogwrapper.h>
 #include <HelperLibrary/Widgets/widgethelper.h>
 #include <HelperLibrary/functions.h>
+#include <HelperLibrary/releaseassert.h>

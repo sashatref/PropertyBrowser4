@@ -2,9 +2,6 @@
 
 #include <PropertyBrowserCore/editorproperties.h>
 
-#include "propertybrowser.h"
-#include "settingsform.h"
-
 VariantMapPropertyItem::VariantMapPropertyItem():
     AbstractPropertyItem(QVariant::Map)
 {

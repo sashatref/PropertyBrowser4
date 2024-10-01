@@ -20,7 +20,7 @@ class AbstractPropertyItem : public QObject
     Q_OBJECT
 public:
     AbstractPropertyItem(int _propertyType = QVariant::Invalid);
-    virtual ~AbstractPropertyItem() {}
+    virtual ~AbstractPropertyItem() = default;
 
     void initProperty(const QString &_propertyName, const PropertyInfo &_propInfo, QTreeWidgetItem *_treeItem,
                        const QMetaProperty &_metaProperty);
@@ -273,20 +273,20 @@ signals:
     void onSetValue(const QVariant &_val);
 
 protected:
-    QTreeWidgetItem *m_treeItem;
+    QTreeWidgetItem *m_treeItem = nullptr;
     QMap<int, QVariant> m_propertiesMap;
-    bool m_isExpandable;
+    bool m_isExpandable = false;
 
-//private:
+    //private:
     QString m_propertyName;
     QString m_propertyCaption;
     QString m_group;
     QString m_description;
-    bool m_isVisible;
-    bool m_isWarning;
-    bool m_isRequried;
-    bool m_isReadOnly;
-    int m_propertyType;
+    bool m_isVisible = true;
+    bool m_isWarning = false;
+    bool m_isRequried = false;
+    bool m_isReadOnly = false;
+    int m_propertyType{};
     QVariant m_value;
     QVariant m_oldValue;
     QMetaProperty m_metaProperty;

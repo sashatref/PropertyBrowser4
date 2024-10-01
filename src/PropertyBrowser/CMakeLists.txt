@@ -3,15 +3,9 @@ set(PROJECT_NAME PropertyBrowser4)
 project(${PROJECT_NAME} VERSION 1.0.0)
 
 set(SOURCES
-    Decorator/decoratorfactory.cpp
-    Decorator/decoratorfactory.h
-    Decorator/idecoratorbase.cpp
-    Decorator/idecoratorbase.h
+
     Propertybrowser_images.qrc
     export.h
-    interfacetool.cpp
-    interfacetool.h
-    ipropertyinfomap.h
     manageobject.cpp
     manageobject.h
     manageobject.ui

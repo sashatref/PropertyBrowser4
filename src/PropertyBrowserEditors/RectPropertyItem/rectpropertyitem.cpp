@@ -1,8 +1,8 @@
 #include "rectpropertyitem.h"
-#include "interfacetool.h"
-#include "propertybrowser.h"
-#include "propertybrowser_p.h"
+
+#include <PropertyBrowserCore/EditorFactory.h>
 #include <PropertyBrowserCore/editorproperties.h>
+#include <PropertyBrowserCore/interfacetool.h>
 
 RectPropertyItem::RectPropertyItem()
 {
@@ -72,11 +72,11 @@ void RectPropertyItem::updateTextValue()
         {
             const QString key = items.at(i);
 
-            AbstractPropertyItem *addedItem = PropertyBrowser::addItem(key,
-                                                                       QVariant::Int,
-                                                                       m_treeItem,
-                                                                       map[key],
-                                                                       QMetaProperty());
+            AbstractPropertyItem *addedItem = EditorFactory::addItem(key,
+                                                                     QVariant::Int,
+                                                                     m_treeItem,
+                                                                     map[key],
+                                                                     QMetaProperty());
             connect(addedItem, &AbstractPropertyItem::valueChanged, this, &RectPropertyItem::onPropertyChanged);
 
             addedItem->updateTextValue();

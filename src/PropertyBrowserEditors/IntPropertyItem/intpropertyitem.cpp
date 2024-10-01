@@ -4,7 +4,6 @@
 #include "defaultinteditor.h"
 #include "enuminteditor.h"
 #include "flagsinteditor.h"
-#include "propertybrowser.h"
 #include <PropertyBrowserCore/editorproperties.h>
 
 IntPropertyItem::IntPropertyItem():
